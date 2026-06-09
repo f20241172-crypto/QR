@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Educational Infographic - Wind Power</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1, h2 { color: #2c3e50; }
+    section { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Minerals and Energy Resources</h1>
+  <h2>Class 10 - Contemporary India II</h2>
+
+  <section id="objectives">
+    <h3>Learning Objectives</h3>
+    <ul>
+      <li>Understand sources of power for electricity (renewable & non-renewable).</li>
+      <li>Explore principles and mechanisms of power generation.</li>
+      <li>Examine applications in domestic, industrial, and commercial sectors.</li>
+      <li>Analyze environmental and economic impacts for sustainable development.</li>
+    </ul>
+  </section>
+
+  <section id="science">
+    <h3>Science Involved</h3>
+    <p>Wind contains kinetic energy. Turbine blades rotate, producing mechanical energy. A generator converts it into electricity. Wind power is clean and renewable.</p>
+  </section>
+
+  <section id="activity">
+    <h3>Participate & Observe</h3>
+    <ul>
+      <li>Observe rotation of windmill/turbine in moving air.</li>
+      <li>Notice faster wind increases blade speed.</li>
+      <li>Identify blades, tower, and generator.</li>
+      <li>Discuss conversion of wind energy to electricity without pollution.</li>
+    </ul>
+  </section>
+
+  <section id="applications">
+    <h3>Applications</h3>
+    <ul>
+      <li><strong>Electricity Generation:</strong> Wind farms produce clean electricity.</li>
+      <li><strong>Agriculture:</strong> Windmills provide mechanical power.</li>
+      <li><strong>Water Pumping:</strong> Wind pumps lift water for irrigation.</li>
+      <li><strong>Sustainable Farming:</strong> Supports eco-friendly practices.</li>
+      <li><strong>Rural Development:</strong> Provides energy in remote areas.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h3>Image Gallery</h3>
+    <img src="image5.jpg" alt="Wind turbine image 5">
+    <img src="image6.jpg" alt="Wind turbine image 6">
+  </section>
+</body>
+</html>
