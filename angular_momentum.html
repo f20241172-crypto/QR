@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conservation of Angular Momentum</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: #1a3a6b;
+      text-align: center;
+      padding: 32px 20px 24px;
+    }
+    .header h1 {
+      color: #ffffff;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .header h2 {
+      color: #ffffff;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── SECTIONS WRAPPER ── */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 18px 16px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* ── CARD BASE ── */
+    .card {
+      border-radius: 16px;
+      padding: 0;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+    .card-header {
+      padding: 18px 22px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .card-header i {
+      font-size: 1.4rem;
+    }
+    .card-header h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .card-body {
+      background: #ffffff;
+      padding: 20px 28px 24px;
+    }
+    .card-body p,
+    .card-body li {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .card-body ul {
+      list-style: disc;
+      padding-left: 22px;
+    }
+    .card-body ul li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── ACADEMIC INFORMATION — yellow ── */
+    .card-academic {
+      border-color: #e6b800;
+    }
+    .card-academic .card-header {
+      background: #fffbe6;
+    }
+    .card-academic .card-body {
+      background: #ffffff;
+    }
+    .card-academic .card-body p {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    /* ── LEARNING OBJECTIVES — green ── */
+    .card-objectives {
+      border-color: #6abf69;
+    }
+    .card-objectives .card-header {
+      background: #f0faf0;
+    }
+
+    /* ── SCIENCE INVOLVED — blue ── */
+    .card-science {
+      border-color: #7ec8e3;
+    }
+    .card-science .card-header {
+      background: #e8f6fb;
+    }
+
+    /* ── PARTICIPATE & OBSERVE — purple ── */
+    .card-participate {
+      border-color: #b084e8;
+    }
+    .card-participate .card-header {
+      background: #f3eaff;
+    }
+
+    /* ── APPLICATIONS — pink ── */
+    .card-applications {
+      border-color: #f06292;
+    }
+    .card-applications .card-header {
+      background: #fff0f5;
+    }
+
+    /* ── IMAGE GALLERY — cyan ── */
+    .card-gallery {
+      border-color: #26c6da;
+    }
+    .card-gallery .card-header {
+      background: #e0f7fa;
+    }
+    .gallery-grid {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 16px 22px 24px;
+      background: #ffffff;
+    }
+    .gallery-grid img {
+      width: 180px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid #e0e0e0;
+    }
+    .gallery-placeholder {
+      width: 180px;
+      height: 140px;
+      border-radius: 12px;
+      border: 2px dashed #b0bec5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #90a4ae;
+      font-size: 0.85rem;
+      background: #f9fafa;
+    }
+
+    /* ── VIDEO — red/orange ── */
+    .card-video {
+      border-color: #ef5350;
+    }
+    .card-video .card-header {
+      background: #fff3f3;
+    }
+    .video-wrap {
+      background: #ffffff;
+      padding: 16px 22px 24px;
+    }
+    .video-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ef5350;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .video-btn:hover {
+      background: #c62828;
+    }
+
+    /* label styling inside academic card */
+    .info-row {
+      margin-bottom: 7px;
+      font-size: 1rem;
+    }
+    .info-row strong {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Conservation of Angular Momentum</h1>
+    <h2>(Rotational Motion)</h2>
+  </div>
+
+  <div class="content">
+
+    <!-- ACADEMIC INFORMATION -->
+    <div class="card card-academic">
+      <div class="card-header">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Academic Information</h3>
+      </div>
+      <div class="card-body">
+        <p class="info-row"><strong>Class:</strong> 11</p>
+        <p class="info-row"><strong>Book Name:</strong> Physics – I</p>
+        <p class="info-row"><strong>Chapter No:</strong> 6</p>
+        <p class="info-row"><strong>Chapter:</strong> System of Particles and Rotational Motion</p>
+      </div>
+    </div>
+
+    <!-- LEARNING OBJECTIVES -->
+    <div class="card card-objectives">
+      <div class="card-header">
+        <i class="fas fa-bullseye"></i>
+        <h3>Learning Objectives</h3>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Recognize that in a closed system (no external torques), the total angular momentum remains constant.</li>
+          <li>Identify how angular momentum plays a role in situations such as gyroscopes, ice skaters spinning faster by pulling in their arms, or the stability of planets in their orbits.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCIENCE INVOLVED -->
+    <div class="card card-science">
+      <div class="card-header">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Science Involved</h3>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>If no external torque acts on a body in motion, angular momentum (moment of inertia × angular velocity) remains constant.</li>
+          <li>When pulling weights towards the body, the moment of inertia decreases, and speed increases, conserving angular momentum.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PARTICIPATE & OBSERVE -->
+    <div class="card card-participate">
+      <div class="card-header">
+        <i class="fas fa-hand-point-down"></i>
+        <h3>Participate &amp; Observe</h3>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Sit on the turntable with weights on both sides. Slide weights to the farthest point and have a friend slowly set the turntable in motion.</li>
+          <li>Slide the weights towards your body to increase speed and push them back to decrease speed.</li>
+          <li>Hold a cycle wheel straight at a right angle and tilt it left or right to rotate the turntable accordingly, demonstrating the gyroscope principle.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- APPLICATIONS -->
+    <div class="card card-applications">
+      <div class="card-header">
+        <i class="fas fa-cogs"></i>
+        <h3>Applications</h3>
+      </div>
+      <div class="card-body">
+        <ul>
+          <li><strong>Stability:</strong> Angular momentum is crucial for the stability of spinning objects like tops and gyroscopes.</li>
+          <li><strong>Astrophysics:</strong> Understanding the rotation of planets, stars, and galaxies.</li>
+          <li><strong>Quantum Mechanics:</strong> Describing the behavior of subatomic particles and intrinsic spin.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IMAGE GALLERY -->
+    <div class="card card-gallery">
+      <div class="card-header">
+        <i class="fas fa-images"></i>
+        <h3>Image Gallery</h3>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-placeholder">Image 1</div>
+        <div class="gallery-placeholder">Image 2</div>
+        <div class="gallery-placeholder">Image 3</div>
+        <div class="gallery-placeholder">Image 4</div>
+        <div class="gallery-placeholder">Image 5</div>
+        <div class="gallery-placeholder">Image 6</div>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="card card-video">
+      <div class="card-header">
+        <i class="fas fa-video"></i>
+        <h3>Watch Video</h3>
+      </div>
+      <div class="video-wrap">
+        <a href="#" class="video-btn">
+          <i class="fab fa-youtube"></i> Watch on YouTube
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+
+</body>
+</html>
